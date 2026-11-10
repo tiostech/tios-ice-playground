@@ -1,0 +1,15 @@
+readonly: &readonly
+  username: pstalcup_cli
+  password: ""
+  priv_key_file: /Users/pstalcup/.ssh/snowflake-keys/snowflake_key.p8
+  account_identifier: nta32714.us-east-1
+  database: TIOSDATA_PRODUCTION
+  schema: TIOSDATA
+  warehouse: COMPUTE_WH
+  role: TIOSREADER
+
+development:
+  <<: *readonly
+
+production:
+  <<: *readonly

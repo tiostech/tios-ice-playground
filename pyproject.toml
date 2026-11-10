@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "tios-pandas-example"
+version = "0.0.1"
+description = "Example: query EnergyCore MySQL and Snowflake into Pandas"
+authors = ["Tios Capital <info@tioscapital.com>"]
+packages = [{ include = "tios_pandas_example", from = "src" }]
+
+[tool.poetry.dependencies]
+python = ">=3.10, <4.0.0"
+pandas = "^2.2"
+sqlalchemy = "^2.0"
+pymysql = "^1.1"
+snowflake-sqlalchemy = "^1.7"
+cryptography = "^43.0"
+pyyaml = "^6.0.1"
+scikit-learn = "~1.7"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0"
+black = "^24.10.0"
+
+[tool.black]
+line-length = 120
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

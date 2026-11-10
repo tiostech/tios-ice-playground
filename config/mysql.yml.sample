@@ -1,0 +1,29 @@
+# One section per TIOS_ENV. Generate the real file with bin/build-configs.sh,
+# or `just use-config-samples` and edit config/mysql.yml by hand.
+
+# local MySQL (team default: root, no password)
+development:
+  username: root
+  password:
+  host: 127.0.0.1
+  port: 3306
+  name: tioscore_development_master
+
+# The tios-labs tunnels put prod and stage both on localhost:3309, so open only one at a time.
+# TIOS_ENV picks these settings; the open tunnel decides which database you actually reach.
+
+# read-only prod replica; needs `just prod-tunnel` (tios-labs/bin/slave-ssh-tunnel)
+production:
+  username: youruser
+  password: yourpass
+  host: 127.0.0.1
+  port: 3309
+  name: tioscore_production
+
+# stage; needs `just stage-tunnel` (tios-labs/bin/stage-ssh-tunnel)
+stage:
+  username: youruser
+  password: yourpass
+  host: 127.0.0.1
+  port: 3309
+  name: tioscore_production

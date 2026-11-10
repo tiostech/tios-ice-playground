@@ -1,0 +1,24 @@
+development:
+  username: root
+  password:
+  host: 127.0.0.1
+  port: 3306
+  name: tioscore_development_master
+
+# The tios-labs tunnels put prod and stage both on localhost:3309, so open only one at a time.
+
+# read-only prod replica; needs `just prod-tunnel` (tios-labs/bin/slave-ssh-tunnel)
+production:
+  username: pstalcup
+  password: "c0mp3t3w1thCODE"
+  host: 127.0.0.1
+  port: 3309
+  name: tioscore_production
+
+# stage; needs `just stage-tunnel` (tios-labs/bin/stage-ssh-tunnel)
+stage:
+  username: pstalcup
+  password: "c0mp3t3w1thCODE"
+  host: 127.0.0.1
+  port: 3309
+  name: tioscore_production
